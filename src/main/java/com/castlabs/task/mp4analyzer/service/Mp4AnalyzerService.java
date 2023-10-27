@@ -13,11 +13,21 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Service for analyzing MP4 files.
+ */
 @Service
-public class mp4AnalyzerService {
+public class Mp4AnalyzerService {
 
-    private static final Logger logger = LoggerFactory.getLogger(mp4AnalyzerService.class);
+    private static final Logger logger = LoggerFactory.getLogger(Mp4AnalyzerService.class);
 
+    /**
+     * Analyzes an MP4 file from a given URL.
+     *
+     * @param urlString The URL string of the MP4 file to be analyzed.
+     * @return A list of boxes found within the MP4 file.
+     * @throws IOException If there's an error reading from the URL.
+     */
     public List<Box> analyzeMp4(String urlString) throws IOException {
         logger.info("Analyzing MP4 from URL: {}", urlString);
         URL url = new URL(urlString);
@@ -26,7 +36,7 @@ public class mp4AnalyzerService {
         }
     }
 
-    private List<Box> parseBoxes(DataInputStream dis) throws IOException {
+    List<Box> parseBoxes(DataInputStream dis) throws IOException {
         List<Box> boxes = new ArrayList<>();
         while (dis.available() > 0) {
             int size = dis.readInt();

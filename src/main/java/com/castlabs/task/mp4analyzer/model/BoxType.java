@@ -1,5 +1,8 @@
 package com.castlabs.task.mp4analyzer.model;
 
+/**
+ * Enumeration for the different types of boxes that can be found in an MP4 file.
+ */
 public enum BoxType {
     MOOF("MOOF"),
     CTYP("CTYP"),
