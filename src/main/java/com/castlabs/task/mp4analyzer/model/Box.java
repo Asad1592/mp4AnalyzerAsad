@@ -2,6 +2,9 @@ package com.castlabs.task.mp4analyzer.model;
 
 import java.util.List;
 
+/**
+ * Represents a box in an MP4 file.
+ */
 public class Box {
     private String type;
     private int size;
